@@ -1,22 +1,18 @@
 name: sample work flow
+
 on: 
-  workflow_dispatch :
+  workflow_dispatch:
     inputs:
-       name: 
-         description: my sample workflow
-         required: false
-         default: "" 
+      name: 
+        description: my sample workflow
+        required: false
+        default: ""
 
 jobs:
-   my-testing-1:
-      name: my-testing-job-1
-      runs-on: ubuntu-latest
-        steps:
-          -name: stage 1
-           run: echo "Hello"
-      
+  my-testing-1:
+    name: my-testing-job-1
+    runs-on: ubuntu-latest
 
-
-     
-         
-  
+    steps:
+      - name: stage 1
+        run: echo "Hello"
