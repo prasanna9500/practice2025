@@ -10,10 +10,19 @@ on:
 
 jobs:
   job1:
-    name: terraform-plan
+    name: test-plan
     runs-on: ubuntu-latest
     steps:
       - name: stage1
-        run: echo "hello world"${{github.events.inputs.name}}
+        run: echo "hello world ${{ github.event.inputs.name }}"
+      - name: stage2
+        run: echo "hello world"
+
+  job2:
+    name: test-apply
+    runs-on: ubuntu-latest
+    steps:
+      - name: stage1
+        run: echo "hello world ${{ github.event.inputs.name }}"
       - name: stage2
         run: echo "hello world"
