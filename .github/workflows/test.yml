@@ -12,7 +12,8 @@ jobs:
   job1:
     name: terraform-plan
     runs-on: ubuntu-latest
-
     steps:
       - name: stage1
+        run: echo "hello world"${{github.events.inputs.name}}
+      - name: stage2
         run: echo "hello world"
