@@ -5,8 +5,8 @@ on:
     inputs:
       name: 
         description: my sample workflow
-        required: false
-        default: ""
+        required: true
+        default: 'development'
 
 jobs:
   my-testing-1:
@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: stage 1
-        run: echo "Hello"
+        run: echo "Hello-"${{github.event.inputs.name}}
