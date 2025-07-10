@@ -1,18 +1,18 @@
-name: sample work flow
+name: pipeline
 
-on: 
+on:
   workflow_dispatch:
     inputs:
-      name: 
-        description: my sample workflow
+      name:
+        description: 'my testing job 1'
         required: true
-        default: 'development'
+        default: 'tetsing-job'
 
 jobs:
-  my-testing-1:
-    name: my-testing-job-1
+  job1:
+    name: terraform-plan
     runs-on: ubuntu-latest
 
     steps:
-      - name: stage 1
-        run: echo "Hello-"${{github.event.inputs.name}}
+      - name: stage1
+        run: echo "hello world"
