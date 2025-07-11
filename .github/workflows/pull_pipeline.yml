@@ -8,7 +8,7 @@ on:
         required: true
         default: 'tetsing-job'
   pull_request:
-      types: [opened]
+      types: [closed]
 jobs:
   job1:
     name: test-plan
