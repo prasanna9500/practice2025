@@ -1,4 +1,4 @@
-name: pipeline
+name: pull_pipeline
 
 on:
   workflow_dispatch:
