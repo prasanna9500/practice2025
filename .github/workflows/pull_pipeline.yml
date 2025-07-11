@@ -2,14 +2,13 @@ name: pull_pipeline
 
 on:
   workflow_dispatch:
-  pull_request:
-      types: [opened]
     inputs:
       name:
         description: 'my testing job 1'
         required: true
         default: 'tetsing-job'
-
+  pull_request:
+      types: [opened]
 jobs:
   job1:
     name: test-plan
