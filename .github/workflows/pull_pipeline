@@ -1,1 +1,31 @@
+name: pipeline
 
+on:
+  workflow_dispatch:
+  pull_request:
+      types: [opened]
+    inputs:
+      name:
+        description: 'my testing job 1'
+        required: true
+        default: 'tetsing-job'
+
+jobs:
+  job1:
+    name: test-plan
+    runs-on: ubuntu-latest
+    steps:
+      - name: stage1
+        run: echo "hello world ${{ github.event.inputs.name }}"
+      - name: stage2
+        run: echo "hello world"
+
+  job2:
+    name: test-apply
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: stage1
+        run: echo "hello world ${{ github.event.inputs.name }}"
+      - name: stage2
+        run: echo "hello world"
