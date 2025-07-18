@@ -1,7 +1,6 @@
 name: pull_pipeline
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
     inputs:
       name:
         description: 'my testing job 1'
